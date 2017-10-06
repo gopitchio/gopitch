@@ -1,2 +1,2 @@
-## PUSH TO GITHUB
-git push origin master
+## Start Up
+node index
