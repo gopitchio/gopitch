@@ -3,6 +3,7 @@ const express = require("express"),
   cookieSession = require("cookie-session"),
   passport = require("passport"),
   keys = require("./config/keys");
+  
 require("./models/user");
 require("./services/passport");
 
@@ -25,7 +26,5 @@ app.use(passport.session());
 
 require("./routes/auth")(app);
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, "localhost", () => {
-  console.log("Dev server is running on port: " + PORT);
-});
+let port_number = app.listen(process.env.PORT || 5000);
+app.listen(port_number);
