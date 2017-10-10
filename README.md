@@ -1,6 +1,6 @@
-##Front End
+## Front End
 React, Redux, Create React App
-##Back End
+## Back End
 NodeJS/Express, MongoDB, Passport Auth, Mongoose, Cookie-Session
 
 ## Start Up
