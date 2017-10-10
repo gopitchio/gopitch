@@ -27,7 +27,7 @@ class Header extends Component {
       <nav className="nav-extended red lighten-1">
         <div className="nav-background" />
         <div className="nav-wrapper container">
-          <Link to={ this.props.auth ? "/campaigns" : "/" } 
+          <Link to={ this.props.auth ? "/competitions" : "/" } 
             className="brand-logo">
             <i className="material-icons">camera</i>GoPitch
           </Link>

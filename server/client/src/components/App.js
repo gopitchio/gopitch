@@ -10,8 +10,8 @@ const Dashboard = () => {
   return <h2>Dashboard</h2>;
 };
 
-const NewCampaign = () => {
-  return <h2>NewCampaign</h2>;
+const NewCompetiton = () => {
+  return <h2>NewCompetiton</h2>;
 };
 
 class App extends Component {
@@ -27,8 +27,8 @@ class App extends Component {
             <Header />
             <div className="container">
               <Route exact path="/" component={Landing} />
-              <Route exact path="/campaigns" component={Dashboard} />
-              <Route path="/campaigns/new" component={NewCampaign} />
+              <Route exact path="/competitions" component={Dashboard} />
+              <Route path="/competitions/new" component={NewCompetiton} />
             </div>
           </div>
         </BrowserRouter>
