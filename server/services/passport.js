@@ -9,9 +9,9 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-   UsersCollection.findById(id)
-   .then(user => done(null, user))
-   .catch(error => done(error));
+  UsersCollection.findById(id)
+    .then(user => done(null, user))
+    .catch(error => done(error));
 });
 
 passport.use(
@@ -22,20 +22,16 @@ passport.use(
       callbackURL: "/auth/google/callback",
       proxy: true
     },
-    (accessToken, refreshToken, profile, done) => {
-      UsersCollection.findOne({ googleId: profile.id })
-        .then(existingUser => {
-          if (existingUser) {
-            done(null, existingUser);
-          } else {
-            const user = new UsersCollection({
-              googleId: profile.id
-            });
+    async (accessToken, refreshToken, profile, done) => {
+      const existingUser = await UsersCollection.findOne({
+        googleId: profile.id
+      });
 
-            user.save().then(user => done(null, user));
-          }
-        })
-        .catch(error => done(error));
+      if (existingUser) {
+        return done(null, existingUser);
+      }
+      const user = await new UsersCollection({ googleId: profile.id }).save();
+      done(null, user);
     }
   )
 );

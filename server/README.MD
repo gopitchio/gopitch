@@ -1,2 +1,2 @@
 ## Start Up
-node index
+npm run dev
