@@ -14,6 +14,10 @@ const NewCompetiton = () => {
   return <h2>NewCompetiton</h2>;
 };
 
+const About = () => {
+  return <h2>About</h2>;
+};
+
 class App extends Component {
   componentDidMount() {
     this.props.fetchUser();
@@ -28,6 +32,7 @@ class App extends Component {
             <div className="container">
               <Route exact path="/" component={Landing} />
               <Route exact path="/competitions" component={Dashboard} />
+              <Route exact path="/about" component={About} />
               <Route path="/competitions/new" component={NewCompetiton} />
             </div>
           </div>
@@ -36,5 +41,5 @@ class App extends Component {
     );
   }
 }
-
+//             connect(mapStateToProps func, actions)(Component)
 export default connect(null, actions)(App); //connecting actions to a component

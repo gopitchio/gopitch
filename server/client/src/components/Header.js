@@ -24,23 +24,11 @@ class Header extends Component {
 
   render() {
     return (
-      <nav className="nav-extended red lighten-1">
-        <div className="nav-background" />
-        <div className="nav-wrapper container">
-          <Link to={ this.props.auth ? "/competitions" : "/" } 
-            className="brand-logo">
-            <i className="material-icons">camera</i>GoPitch
-          </Link>
-          <a href="#" data-activates="nav-mobile" className="button-collapse">
-            <i className="material-icons">menu</i>
-          </a>
-          <ul className="right hide-on-med-and-down">
-            <li>
-              <a href="#">Dashboard</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
+      <nav>
+        <div className="nav-wrapper">
+          <Link to={this.props.auth ? '/competitions' : '/'} className="left brand-logo">GoPitch</Link>
+          <ul id="nav-mobile" className="right">
+            <li><a href="/about">About</a></li>
             {this.renderContent()}
           </ul>
         </div>
